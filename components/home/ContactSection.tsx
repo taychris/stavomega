@@ -22,7 +22,7 @@ const ContactSection = () => {
           Chcete nás kontaktovať?
         </motion.h1>
         <motion.p
-          className="font-light text-2xl md:text-3xl mb-10 md:px-28"
+          className="font-light text-2xl md:text-3xl mb-10 px-5 md:px-28"
           variants={childrenAnimation}
         >
           Môžete nám ihneď poslať správu cez náš kontaktný formulár, alebo rôznými
