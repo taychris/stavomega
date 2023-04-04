@@ -3,6 +3,11 @@ import ContactEmailBtn from "../../../components/contact/ContactEmailBtn"
 import ContactForm from "../../../components/contact/ContactForm"
 import Footer from "../../../components/Footer"
 
+export const metadata = {
+  title: 'Kontakt - Stavomega',
+  description: 'Všetko, pre Vašu stavbu, domácnosť aj záhradu',
+}
+
 const Contact = () => {
   return (
     <>
