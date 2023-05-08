@@ -7,3 +7,7 @@
     @apply bg-primary text-white text-lg min-h-[52px] md:text-2xl rounded-md px-5 py-2 font-light hover:bg-white hover:text-primary duration-500 border-2 border-primary
   }
 }
+
+.calculated-height {
+  height: calc(100vh - 80px);
+}

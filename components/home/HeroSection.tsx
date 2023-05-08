@@ -8,18 +8,12 @@ const HeroSection = () => {
   return (
     <motion.section
       id="domov"
-      className="w-full min-h-[100dvh] flex items-center justify-center flex-col relative"
+      className="w-[100dvw] h-[100dvh] flex items-center justify-center flex-col relative"
       variants={parentAnimation}
       whileInView="visible"
       initial="hidden"
       viewport={{once: true}}
     >
-      <motion.h1
-        className="font-medium text-3xl md:text-6xl mb-6"
-        variants={childrenAnimation}
-      >
-        Stavebné centrum
-      </motion.h1>
       <motion.div
         className="relative w-[260px] h-[100px] md:w-[500px] md:h-[140px] mb-6"
         variants={childrenAnimation}
@@ -32,7 +26,7 @@ const HeroSection = () => {
         />
       </motion.div>
       <motion.h2
-        className="font-light text-2xl md:text-3xl mb-14 text-center"
+        className="px-4 text-2xl font-light text-center md:text-3xl mb-14"
         variants={childrenAnimation}
       >
         Všetko, pre Vašu stavbu, domácnosť aj záhradu
