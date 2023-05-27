@@ -36,7 +36,7 @@ const GalleryMain = () => {
                 galleryImgs.map((image) => (
                   <>
                     <img key={image} src={`gallery/${galleryImgs[imgIndex]}`} className="object-contain"/>
-                    <img key={image + 1} src={`gallery/${galleryImgs[imgIndex + 1 <= galleryImgs.length ? imgIndex : imgIndex + 1]}`} className="absolute -z-50"/>
+                    <img key={image + 1} src={`gallery/${galleryImgs[imgIndex + 1 <= galleryImgs.length ? imgIndex : imgIndex + 1]}`} className="absolute opacity-0 -z-50"/>
                   </>
                 ))
             }
