@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { parentAnimation } from "../../lib/animations";
 import { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 const galleryImgs = [
   "1.png",
@@ -33,7 +34,10 @@ const GalleryMain = () => {
         <motion.div animate={{x: `-${imgIndex * 100}%`}} transition={{duration: 0.7, ease: [0.32, 0.72, 0, 1]}} className="flex">
             {
                 galleryImgs.map((image) => (
+                  <>
                     <img key={image} src={`gallery/${galleryImgs[imgIndex]}`} className="object-contain"/>
+                    <img key={image + 1} src={`gallery/${galleryImgs[imgIndex + 1 <= galleryImgs.length ? imgIndex : imgIndex + 1]}`} className="absolute -z-50"/>
+                  </>
                 ))
             }
         </motion.div>

@@ -16,20 +16,19 @@ const ContactSection = () => {
       initial="hidden"
       viewport={{once: true}}>
         <motion.h1
-          className="px-4 text-4xl md:text-6xl font-medium mb-8"
+          className="px-4 mb-8 text-4xl font-medium md:text-6xl"
           variants={childrenAnimation}
         >
           Chcete nás kontaktovať?
         </motion.h1>
         <motion.p
-          className="font-light text-2xl md:text-3xl mb-10 px-5 md:px-28"
+          className="px-5 mb-10 text-2xl font-light md:text-3xl md:px-28"
           variants={childrenAnimation}
         >
-          Môžete nám ihneď poslať správu cez náš kontaktný formulár, alebo rôznými
-          inými spôsobmi.
+          Neváhajte a kontaktujte nás na akýkoľvek Vami požadovaný stavebný alebo iný materiál.
         </motion.p>
         <motion.div variants={childrenAnimation}>
-          <Link href={"/kontakt"} className="btn-primary m-auto">
+          <Link href={"/kontakt"} className="m-auto btn-primary">
             Kontakt
           </Link>
         </motion.div>

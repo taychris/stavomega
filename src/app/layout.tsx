@@ -10,8 +10,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="sk" className={`${poppins.className}`}>
-      <body>
+    <html lang="sk">
+      <body className={`${poppins.className}`}>
         <NavigationBar/>
         {children}
       </body>
