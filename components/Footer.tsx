@@ -2,15 +2,15 @@ import Link from "next/link"
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 w-full py-20 text-center text-white">
-        <h1 className="text-2xl tracking-wide font-medium mb-2">Otváracie hodiny</h1>
-        <ul className="font-light mb-10">
-            <li>Po - Pia: 08:00 - 17:00</li>
-            <li>Sobota: 09:00 - 12:30</li>
+    <footer className="w-full py-20 text-center text-white bg-gray-900">
+        <h1 className="mb-2 text-2xl font-medium tracking-wide">Otváracie hodiny</h1>
+        <ul className="mb-10 font-light">
+            <li>Po - Pia: 07:00 - 17:00</li>
+            <li>Sobota: 07:00 - 12:00</li>
             <li>Nedeľa: Oddychujeme</li>
         </ul>
         <Link href="/gdpr" className="text-sm">Ochrana osobných údajov</Link>
-        <p className="font-light text-xs mt-3">© Copyright Stavomega 2023</p>
+        <p className="mt-3 text-xs font-light">© Copyright Stavomega 2023</p>
     </footer>
   )
 }
