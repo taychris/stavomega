@@ -2,6 +2,7 @@
 import {motion} from "framer-motion"
 import { childrenAnimation, parentAnimation } from "../../lib/animations"
 import { sortiment } from "../../lib/sortiment"
+import Link from "next/link"
 
 const SortimentMain = () => {
   return (
@@ -15,7 +16,9 @@ const SortimentMain = () => {
                     {/* <motion.div initial={{width: "0%"}} whileInView={{width: "100%"}} transition={{duration: 1}} viewport={{once: true}} className="h-[2px] mb-3 bg-gray-300 rounded-full"/> */}
                     <div className="flex flex-row flex-wrap justify-center gap-4 p-6">
                         {item.logos.map((logo) => (
-                            <motion.img variants={childrenAnimation} key={logo} src={`/sortiment/${logo}`} className="max-w-[120px] object-contain"/>
+                            <Link href={logo.url} target="_blank" key={logo.img} className="flex duration-300 hover:scale-105 hover:opacity-80">
+                                <motion.img variants={childrenAnimation} src={`/sortiment/${logo.img}`} className="max-w-[120px] object-contain"/>
+                            </Link>
                         ))}
                     </div>
                 </motion.div>

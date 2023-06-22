@@ -5,6 +5,7 @@ import DopravaMain from "../../../components/doprava/DopravaMain"
 export const metadata = {
     title: 'Doprava - Stavomega',
     description: 'Všetko, pre Vašu stavbu, domácnosť aj záhradu',
+    keywords: ["stavomega doprava", "Stavomega doprava", "doprava stavomega"]
   }
 
 const Doprava = () => {
