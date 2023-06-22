@@ -11,7 +11,7 @@ const SortimentMain = () => {
         <section className="gap-10 columns-1 sm:columns-2 md:columns-3">
             {sortiment.map((item, index) => (
                 <motion.div variants={parentAnimation} whileInView="visible" initial="hidden" viewport={{once: true}}  key={index} className="mb-10 overflow-hidden bg-white rounded-lg shadow-lg break-inside-avoid-column">
-                    <motion.h1 variants={childrenAnimation} className="px-6 py-4 text-lg text-center capitalize bg-gray-50 text-secondary_gray md:text-2xl">{item.title}</motion.h1>
+                    <motion.h1 variants={childrenAnimation} className="px-6 py-4 text-lg text-center bg-gray-50 text-secondary_gray md:text-2xl">{item.title}</motion.h1>
                     {/* <motion.div initial={{width: "0%"}} whileInView={{width: "100%"}} transition={{duration: 1}} viewport={{once: true}} className="h-[2px] mb-3 bg-gray-300 rounded-full"/> */}
                     <div className="flex flex-row flex-wrap justify-center gap-4 p-6">
                         {item.logos.map((logo) => (

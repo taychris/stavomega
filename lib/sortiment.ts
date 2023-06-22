@@ -1,10 +1,10 @@
 export const sortiment = [
     {
-        title: "betónové debniace tvárnice",
+        title: "Betónové debniace tvárnice",
         logos: ["citystonedesign.png", "sabex.png", "stadreko.png"]
     },
     {
-        title: "murovací materál",
+        title: "Murovací materál",
         logos: ["ytong.png", "porfix.png", "britterm.webp", "leier.png"]
     },
     {

@@ -21,7 +21,7 @@ const AboutSection = () => {
         <div className="w-full h-[100dvh] bg-primary flex flex-col md:flex-row">
             <AboutDescription h1="O nás" h2="Doprava materiálu" p="Taktiež Vám ponúkame dopravu u nás zakúpeného materiálu s hydraulickou rukou priamo na Vami určené miesto." classNames=""/>
             <motion.div className="relative w-full h-full md:w-1/2" whileInView={{opacity: 1, transition: {duration: 0.7}}} viewport={{once: true}} initial={{opacity: 0}}>
-                <Image src="/imgs/delivery.jpg" fill style={{objectFit: "cover"}} alt="Stavomega construction."/>
+                <Image src="/imgs/doprava.jpg" fill style={{objectFit: "cover"}} alt="Stavomega construction."/>
             </motion.div>
         </div>
     </section>

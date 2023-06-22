@@ -1,29 +1,27 @@
 import Link from "next/link";
 
-const ContactEmailBtn = ({
+const ContactBtn = ({
   children,
   linkProp,
   location,
-  email,
+  phoneNumber,
 }: {
   children: React.ReactNode;
   linkProp: string;
   location: string;
-  email: string;
+  phoneNumber: string;
 }) => {
   return (
     <Link
       href={linkProp}
-      className="flex flex-col flex-wrap items-start p-4 text-white rounded-md bg-secondary_gray"
+      className="flex flex-col flex-wrap items-start p-4 text-white rounded-md bg-primary"
     >
       <span className="flex items-center gap-2 text-base font-light md:text-xl">
         {children}
         {location}
       </span>
-      <div className="flex items-center gap-2">
-        <span className="text-xl md:text-2xl">{email}</span>
-      </div>
+      <span className="text-xl md:text-2xl">{phoneNumber}</span>
     </Link>
   );
 };
-export default ContactEmailBtn;
+export default ContactBtn;
