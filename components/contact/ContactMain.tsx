@@ -40,7 +40,7 @@ const ContactMain = () => {
             >
               <EnvelopeIcon className="w-5 h-5" />
             </ContactEmailBtn>
-            <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 md:gap-6">
+            <div className="grid gap-4 xl:grid-cols-2 md:gap-6">
               <ContactBtn
                 linkProp="tel:055/4607102"
                 location="Predajňa"
