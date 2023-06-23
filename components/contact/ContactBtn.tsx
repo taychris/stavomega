@@ -14,7 +14,7 @@ const ContactBtn = ({
   return (
     <Link
       href={linkProp}
-      className="flex flex-col flex-wrap items-start p-4 text-white rounded-md bg-primary"
+      className="flex flex-col items-start p-4 text-white rounded-md bg-primary h-min"
     >
       <span className="flex items-center gap-2 text-base font-light md:text-xl">
         {children}
