@@ -16,7 +16,7 @@ const truckList = [
     },
     {
       imgPath: "/imgs/peugeot_stavomega.png",
-      title: "Peugoet Boxer",
+      title: "Peugeot Boxer",
       truckFeatuers: ["1300kg nosnosť", "3800x2000mm rozmer ložnej plochy"]
     },
   ]
