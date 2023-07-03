@@ -1,9 +1,8 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import { parentAnimation } from "../../lib/animations";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
 
 const galleryImgs = [
   "1.png",
@@ -17,30 +16,43 @@ const galleryImgs = [
   "9.png",
   "10.png",
   "11.png",
+  "12.jpg",
+  "13.jpg",
+  "14.jpg",
+  "15.jpg"
 ];
 
 const GalleryMain = () => {
   const [imgIndex, setImgIndex] = useState(0)
 
+  useEffect(() => {
+    window.addEventListener("keydown", handleNavigate);
+
+    return () => {
+      window.removeEventListener("keydown", handleNavigate);
+    };
+  }, []);
+
+  const handleNavigate = (e: any) => {
+    if(e.key === "ArrowRight") {
+      setImgIndex(prev => prev + 1 > galleryImgs.length -1 ? prev : prev + 1)
+    }
+    if(e.key === "ArrowLeft") {
+      setImgIndex(prev => prev - 1 < 0 ? prev : prev - 1)
+    }
+  }
+
   return (
     <motion.main
-      className="mt-[64px] md:mt-[80px] bg-secondary_gray flex flex-col justify-center calculated-height"
+      className="mt-[64px] md:mt-[80px] bg-secondary_gray flex flex-col justify-center calculated-height items-center relative"
       variants={parentAnimation}
       whileInView="visible"
       initial="hidden"
       viewport={{ once: true }}
     >
-      <div className="relative w-full overflow-hidden">
-        <motion.div animate={{x: `-${imgIndex * 100}%`}} transition={{duration: 0.7, ease: [0.32, 0.72, 0, 1]}} className="flex">
-            {
-                galleryImgs.map((image) => (
-                  <>
-                    <img key={image} src={`gallery/${galleryImgs[imgIndex]}`} className="object-contain"/>
-                    <img key={image + 1} src={`gallery/${galleryImgs[imgIndex + 1 <= galleryImgs.length ? imgIndex : imgIndex + 1]}`} className="absolute opacity-0 -z-50"/>
-                  </>
-                ))
-            }
-        </motion.div>
+      <div className="relative w-full overflow-hidden h-min">          
+        <img src={`gallery/${galleryImgs[imgIndex]}`} className="object-contain w-full h-full"/>
+      </div>
         <AnimatePresence>
             {imgIndex > 0 && (
                 <motion.button initial={{opacity: 0}} animate={{opacity: 0.6}} exit={{opacity: 0}} whileHover={{opacity: 1}} className="absolute w-10 h-10 text-white top-1/2 left-3" onClick={() => setImgIndex(imgIndex - 1)}>
@@ -56,7 +68,6 @@ const GalleryMain = () => {
                 </motion.button>
             }
         </AnimatePresence>
-      </div>
     </motion.main>
   );
 };
