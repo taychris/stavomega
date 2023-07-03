@@ -2,7 +2,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { parentAnimation } from "../../lib/animations";
 import { useEffect, useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";;
+import BlurImage from "./BlurImage";
 
 const galleryImgs = [
   "1.png",
@@ -24,6 +25,7 @@ const galleryImgs = [
 
 const GalleryMain = () => {
   const [imgIndex, setImgIndex] = useState(0)
+  const [loaded, setLoaded] = useState(0)
 
   useEffect(() => {
     window.addEventListener("keydown", handleNavigate);
@@ -32,6 +34,10 @@ const GalleryMain = () => {
       window.removeEventListener("keydown", handleNavigate);
     };
   }, []);
+
+  useEffect(() => {
+    setLoaded(0)
+  }, [imgIndex])
 
   const handleNavigate = (e: any) => {
     if(e.key === "ArrowRight") {
@@ -50,8 +56,8 @@ const GalleryMain = () => {
       initial="hidden"
       viewport={{ once: true }}
     >
-      <div className="relative w-full overflow-hidden h-min">          
-        <img src={`gallery/${galleryImgs[imgIndex]}`} className="object-contain w-full h-full"/>
+      <div className="relative w-full h-full overflow-hidden"> 
+        <BlurImage alt={`gallery image ${imgIndex}`} source={`/gallery/${galleryImgs[imgIndex]}`} loaded={loaded} setLoaded={setLoaded}/>         
       </div>
         <AnimatePresence>
             {imgIndex > 0 && (
